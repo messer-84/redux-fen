@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 
-import PeopleList from 'containers/PeopleList';
-import MessagesList from 'containers/MessagesList';
+import ChatWrap from 'ChatWrap';
 import store from 'store/index';
 
  class Chat extends Component {
@@ -10,8 +9,7 @@ import store from 'store/index';
         return (
             <Provider store={store} key={ module.hot ? Date.now() : store}>
                 <div className="container clearfix">
-                    <PeopleList/>
-                    <MessagesList/>
+                    <ChatWrap />
                 </div>
             </Provider>
         )
