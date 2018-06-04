@@ -152,10 +152,10 @@
     <handled-path value="$PROJECT_DIR$/server/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="969" />
-    <option name="y" value="451" />
-    <option name="width" value="841" />
-    <option name="height" value="823" />
+    <option name="x" value="548" />
+    <option name="y" value="222" />
+    <option name="width" value="1263" />
+    <option name="height" value="852" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
