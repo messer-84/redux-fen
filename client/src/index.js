@@ -1,6 +1,10 @@
 import React from 'react';
 import {render} from 'react-dom';
 import {AppContainer} from 'react-hot-loader';
+import ws from 'util/ws';
+
+window.ws = ws;
+
 
 import 'assets/styles/style.scss';
 import Chat from 'containers/Chat';
