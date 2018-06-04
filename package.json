@@ -1,43 +1,15 @@
 {
-  "name": "setup-env",
+  "name": "chat",
   "version": "1.0.0",
-  "description": "",
+  "description": "chat with node and websocket",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --progress --colors"
+    "start:client": "cd client && npm run dev",
+    "start:server": "cd server && node app.js",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
   },
-  "author": "Maksim Vorobyov",
-  "license": "ISC",
-  "dependencies": {
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
-    "redux-thunk": "^2.3.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.19.1",
-    "eslint-loader": "^2.0.0",
-    "eslint-plugin-react": "^7.8.2",
-    "faker": "^4.1.0",
-    "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.9.0",
-    "react-hot-loader": "^4.2.0",
-    "sass-loader": "^7.0.1",
-    "style-loader": "^0.21.0",
-    "url-loader": "^1.0.1",
-    "webpack": "^4.10.2",
-    "webpack-cli": "^2.1.4",
-    "webpack-dev-server": "^3.1.4"
-  }
+  "author": "",
+  "license": "ISC"
+
 }

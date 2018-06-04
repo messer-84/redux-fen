@@ -6,6 +6,7 @@ const outputPath = path.resolve(__dirname, './dist');
 const webpackConfig = {
     entry: {
         app: [
+            'react-hot-loader/patch',
             path.resolve(__dirname, './src/index.js')
         ]
     },
@@ -36,6 +37,17 @@ const webpackConfig = {
                 use: 'url-loader?limit=10000&name=assets/[name]-[hash].[ext]'
             }
         ]
+    },
+    resolve: {
+        alias: {
+            'components': path.resolve(__dirname, './src/components'),
+            'containers': path.resolve(__dirname, './src/containers'),
+            'actions': path.resolve(__dirname, './src/actions'),
+            'reducers': path.resolve(__dirname, './src/reducers'),
+            'store': path.resolve(__dirname, './src/store'),
+            'assets': path.resolve(__dirname, './src/assets'),
+            'util': path.resolve(__dirname, './src/util')
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
