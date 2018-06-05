@@ -1,4 +1,5 @@
 .idea/
+/.idea/
 .log
 logs/
 /node_modules/

@@ -1,17 +1,22 @@
-const initState = [
-    'Alex',
-    'John',
-    'Sam',
-    'George',
-    'Andrew'
+import constants from 'constants';
 
-];
+const peopleReducer = (state = [], action) => {
 
-const peopleReducer = (state = initState, action) => {
-    if(action.type === 'ADD_NEW_USER'){
-        return state.concat('Alexxx_' + Date.now())
+    switch(action.type) {
+        case constants.CONNECTED_NEW_USER:
+            return state.concat({
+                id: action.userID,
+                userName: action.userName
+            });
+        case constants.DISCONNECTED_USER:
+            return state.filter(u => {
+                return u.id !== action.userID
+            });
+        default:
+            return state;
+
     }
-    return state;
+
 };
 
 export default peopleReducer;

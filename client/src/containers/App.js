@@ -1,19 +1,19 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 
-import ChatWrap from 'ChatWrap';
+import ChatWrap from './ChatWrap';
 import store from 'store/index';
 
- class Chat extends Component {
+ class App extends Component {
     render() {
         return (
             <Provider store={store} key={ module.hot ? Date.now() : store}>
                 <div className="container clearfix">
                     <ChatWrap />
-                </div>
+                    </div>
             </Provider>
         )
     }
 }
 
-export default Chat;
+export default App;

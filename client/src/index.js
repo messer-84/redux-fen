@@ -5,9 +5,10 @@ import ws from 'util/ws';
 
 window.ws = ws;
 
+localStorage.removeItem('auth');
 
 import 'assets/styles/style.scss';
-import Chat from 'containers/Chat';
+import App from 'containers/App';
 
 const renderApp = Component => {
     render(
@@ -19,14 +20,9 @@ const renderApp = Component => {
     )
 };
 
-renderApp(Chat);
+renderApp(App);
 
 if(module.hot){
-    module.hot.accept('containers/Chat', () => {renderApp(Chat)})
+    module.hot.accept('containers/App', () => {renderApp(App)})
 }
 
-
-// render(
-//     <Chat/>,
-//     document.querySelector('#mount_place')
-// );
