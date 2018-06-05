@@ -4,9 +4,6 @@ import PeopleList from 'PeopleList';
 
 
 class ChatWrap extends Component {
-    static propTypes = {
-
-    };
     render(){
         return(
             <div>
