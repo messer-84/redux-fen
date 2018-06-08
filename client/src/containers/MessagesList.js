@@ -7,48 +7,49 @@ import ChatControl from 'components/ChatControl';
 
 class MessagesList extends Component {
 
-  constructor(){
-    super();
+    constructor() {
+        super();
 
-    this.ul = null;
-    this.chatWrap = null;
-  }
+        this.ul = null;
+        this.chatWrap = null;
+    }
 
-  componentDidUpdate(){
-    this.chatWrap.scrollTop = this.ul.scrollHeight;
-  }
+    componentDidUpdate() {
+        this.chatWrap.scrollTop = this.ul.scrollHeight;
+    }
 
-  render() {
-    return (
-      <div className="chat">
-        <ChatHeader/>
-        <div className="chat-history"  ref={chatWrap => this.chatWrap = chatWrap}>
-          <ul ref={ul => this.ul = ul}>
-            {this.props.messages.map(m => {
-              return (
-                <MessageItem key={m.time} {...m}/>
-              )
-            })}
+    render() {
+        console.log('mess-list -this.props.message', this.props.messages);
+        return (
+            <div className="chat">
+                <ChatHeader/>
+                <div className="chat-history" ref={chatWrap => this.chatWrap = chatWrap}>
+                    <ul ref={ul => this.ul = ul}>
+                        {this.props.messages.map(message => {
+                            return (
+                                <MessageItem key={message.time} {...message}/>
+                            )
+                        })}
+                    </ul>
+                </div>
+                {this.props.peoples.length >=1 && <ChatControl/>}
 
-            <MessageItem/>
-          </ul>
-        </div>
-        <ChatControl/>
-      </div>
-    )
-  }
+            </div>
+        )
+    }
 }
 
 const mapStateToProps = (state) => {
-  return {
-    messages: state.messagesReducer
-  }
+    return {
+        messages: state.messagesReducer,
+        peoples: state.peopleReducer
+    }
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    dispatch
-  }
+    return {
+        dispatch
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(MessagesList);

@@ -7,7 +7,7 @@ import PeopleSearch from 'components/PeopleSearch';
 
 class PeopleList extends Component {
     render() {
-        console.log(this.props);
+        console.log('people-list -this.props', this.props);
 
         return (
             <div className="people-list" id="people-list">

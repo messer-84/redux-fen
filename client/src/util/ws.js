@@ -3,6 +3,7 @@ import {
   disconnectedUser,
   receiveNewMessage
 } from "actions";
+
 import store from 'store';
 
 export default ((wsUrl) => {
